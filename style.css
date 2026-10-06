@@ -1,0 +1,922 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Smooth scrolling when clicking navbar links */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Basic body styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #fff8ef;
+    color: #3d3028;
+    line-height: 1.6;
+}
+
+
+/* Remove default link underline */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =====================================================
+   2. REUSABLE VARIABLES
+   ===================================================== */
+
+:root {
+    --primary: #d97745;
+    --primary-dark: #b85c2d;
+
+    --cream: #fff8ef;
+    --light-cream: #fff1df;
+
+    --brown: #3d3028;
+    --light-brown: #806c5e;
+
+    --white: #ffffff;
+
+    --border: #ead9c7;
+
+    --shadow: 0 10px 30px rgba(61, 48, 40, 0.08);
+}
+
+
+/* =====================================================
+   3. NAVBAR
+   ===================================================== */
+
+.header {
+    width: 100%;
+    background-color: var(--white);
+
+    /* Keeps navbar at top while scrolling */
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    padding: 18px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+/* Logo */
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--brown);
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+
+    color: var(--brown);
+
+    transition: color 0.3s ease;
+}
+
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+
+/* =====================================================
+   4. HERO SECTION
+   ===================================================== */
+
+.hero {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 90px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    min-height: 650px;
+}
+
+
+/* Left side */
+
+.hero-content {
+    flex: 1;
+}
+
+
+.small-heading {
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.1;
+
+    color: var(--brown);
+
+    margin-bottom: 25px;
+}
+
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+
+.hero-text {
+    max-width: 550px;
+
+    font-size: 18px;
+
+    color: var(--light-brown);
+
+    margin-bottom: 30px;
+}
+
+
+/* Hero buttons */
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+
+/* General button */
+
+.btn {
+    display: inline-block;
+
+    border: none;
+
+    padding: 14px 25px;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+/* Orange button */
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+
+    transform: translateY(-2px);
+}
+
+
+/* Outline button */
+
+.btn-secondary {
+    background-color: transparent;
+
+    color: var(--primary);
+
+    border: 2px solid var(--primary);
+}
+
+
+.btn-secondary:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+
+/* Hero image */
+
+.hero-image {
+    flex: 1;
+
+    max-width: 500px;
+}
+
+
+.hero-image img {
+    width: 100%;
+
+    height: 520px;
+
+    object-fit: cover;
+
+    border-radius: 30px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =====================================================
+   5. COMMON SECTION STYLING
+   ===================================================== */
+
+.about,
+.help-section,
+.report-section,
+.donate-section {
+    padding: 100px 30px;
+}
+
+
+.section-heading {
+    max-width: 700px;
+
+    margin: 0 auto 50px;
+
+    text-align: center;
+}
+
+
+.section-heading h2 {
+    font-size: 42px;
+
+    line-height: 1.2;
+
+    margin-bottom: 18px;
+
+    color: var(--brown);
+}
+
+
+.section-heading p:last-child {
+    color: var(--light-brown);
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   6. MISSION CARDS
+   ===================================================== */
+
+.mission-cards {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.mission-card {
+    background-color: var(--white);
+
+    padding: 30px 25px;
+
+    border-radius: 15px;
+
+    border: 1px solid var(--border);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+
+.mission-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+}
+
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--light-cream);
+
+    border-radius: 50%;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+
+.mission-card h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+
+.mission-card p {
+    color: var(--light-brown);
+
+    font-size: 15px;
+}
+
+
+/* =====================================================
+   7. HOW YOU CAN HELP
+   ===================================================== */
+
+.help-section {
+    background-color: var(--light-cream);
+}
+
+
+.help-cards {
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.help-card {
+    background-color: var(--white);
+
+    padding: 35px 30px;
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 20px rgba(61, 48, 40, 0.05);
+}
+
+
+.help-icon {
+    font-size: 40px;
+
+    margin-bottom: 15px;
+}
+
+
+.help-card h3 {
+    font-size: 23px;
+
+    margin-bottom: 10px;
+}
+
+
+.help-card p {
+    color: var(--light-brown);
+
+    margin-bottom: 20px;
+}
+
+
+.help-card a {
+    color: var(--primary);
+
+    font-weight: 700;
+}
+
+
+.help-card a:hover {
+    color: var(--primary-dark);
+}
+
+
+/* =====================================================
+   8. REPORT A DOG SECTION
+   ===================================================== */
+
+.report-section {
+    background-color: var(--cream);
+}
+
+
+.report-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* Left side */
+
+.report-info h2 {
+    font-size: 45px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+
+.report-info p {
+    color: var(--light-brown);
+
+    margin-bottom: 15px;
+
+    font-size: 17px;
+}
+
+
+/* =====================================================
+   9. FORM
+   ===================================================== */
+
+.dog-form {
+    background-color: var(--white);
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: var(--shadow);
+}
+
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+
+.form-group > label {
+    display: block;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    margin-bottom: 10px;
+}
+
+
+/* Text input */
+
+.form-group input[type="text"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    background-color: var(--cream);
+
+    color: var(--brown);
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: border 0.3s ease;
+}
+
+
+/* When user clicks inside input */
+
+.form-group input[type="text"]:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* Checkboxes */
+
+.checkbox-group {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.checkbox-label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 14px;
+
+    color: var(--light-brown);
+
+    cursor: pointer;
+}
+
+
+.checkbox-label input {
+    accent-color: var(--primary);
+
+    width: 16px;
+    height: 16px;
+}
+
+
+/* =====================================================
+   10. DONATION SECTION
+   ===================================================== */
+
+.donate-section {
+    background-color: var(--brown);
+
+    color: var(--white);
+
+    text-align: center;
+}
+
+
+.donate-content {
+    max-width: 700px;
+
+    margin: 0 auto;
+}
+
+
+.donate-section .small-heading {
+    color: #f3b08b;
+}
+
+
+.donate-section h2 {
+    font-size: 45px;
+
+    line-height: 1.2;
+
+    margin-bottom: 20px;
+}
+
+
+.donate-section p {
+    color: #dbcac0;
+
+    font-size: 17px;
+
+    margin-bottom: 30px;
+}
+
+
+/* Donation amount buttons */
+
+.donation-options {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+.donation-option {
+    padding: 13px 25px;
+
+    background-color: transparent;
+
+    color: var(--white);
+
+    border: 1px solid #806c5e;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+
+.donation-option:hover {
+    background-color: var(--primary);
+
+    border-color: var(--primary);
+}
+
+
+.donation-option:focus {
+    background-color: var(--primary);
+
+    border-color: var(--primary);
+
+    outline: none;
+}
+
+
+/* =====================================================
+   11. FOOTER
+   ===================================================== */
+
+.footer {
+    background-color: #2d231e;
+
+    color: var(--white);
+
+    padding-top: 60px;
+}
+
+
+.footer-content {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 0 30px 50px;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1.5fr;
+
+    gap: 50px;
+}
+
+
+.footer-brand .logo {
+    color: var(--white);
+
+    display: inline-block;
+
+    margin-bottom: 15px;
+}
+
+
+.footer-brand p {
+    max-width: 300px;
+
+    color: #bcaea5;
+}
+
+
+.footer h3 {
+    font-size: 17px;
+
+    margin-bottom: 18px;
+}
+
+
+.footer-links {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+.footer-links a {
+    color: #bcaea5;
+
+    font-size: 14px;
+
+    transition: color 0.3s ease;
+}
+
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+
+.footer-contact p {
+    color: #bcaea5;
+
+    font-size: 14px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Copyright */
+
+.footer-bottom {
+    border-top: 1px solid #463931;
+
+    text-align: center;
+
+    padding: 20px 30px;
+
+    color: #95867d;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   12. RESPONSIVE DESIGN — TABLETS
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    /* Navbar */
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+
+    .nav-links {
+        gap: 15px;
+    }
+
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 70px 25px;
+
+        gap: 35px;
+    }
+
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+
+    .hero-image img {
+        height: 430px;
+    }
+
+
+    /* Mission cards */
+
+    .mission-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* Help cards */
+
+    .help-cards {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+
+    /* Report section */
+
+    .report-container {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+        max-width: 700px;
+    }
+
+
+    /* Footer */
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =====================================================
+   13. RESPONSIVE DESIGN — MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    /* Navbar */
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 60px 20px;
+    }
+
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+
+    .hero-buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    .hero-image {
+        width: 100%;
+}
